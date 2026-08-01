@@ -1,41 +1,43 @@
 {
-  "team_name": "REPLACE_WITH_TEAM_NAME",
+  "team_name": "5Gen Data",
   "claims": [
     {
       "claim_id": "claim-1",
-      "description": "REPLACE. Example: 'Grade 5 girls in X district score Y percent lower on average than boys in the ABC GP Maths Contest'",
-      "supporting_output": "outputs/tables/gender_gap.csv",
+      "description": "Measurement is the lowest-performing mathematics competency across Karnataka based on statewide competency accuracy.",
+      "supporting_output": "outputs/tables/statewide_competency_accuracy.csv",
       "verification_method": "programmatic",
-      "claimed_value": "Y",
+      "claimed_value": "49.7",
       "unit": "percent",
       "verification_detail": {
-        "filters": { "district": "X", "grade": 5, "year": "ABC" },
-        "group_by": "gender",
+        "group_by": "competency",
         "aggregate": "mean",
-        "column": "Score"
+        "column": "accuracy",
+        "filter": {
+          "competency": "Measurement"
+        }
       }
     },
     {
       "claim_id": "claim-2",
-      "description": "REPLACE. Example: 'Our regression model predicts Grade 4 scores with R2 = 0.XY on a held-out test set'",
-      "supporting_output": "outputs/tables/model_metrics.csv",
-      "verification_method": "reproducible",
-      "claimed_value": "0.XY",
-      "unit": "ratio",
+      "description": "Kodagu is among the districts with the highest competency imbalance, with a Severity Gap of approximately 21 percentage points.",
+      "supporting_output": "outputs/tables/district_severity_gap.csv",
+      "verification_method": "programmatic",
+      "claimed_value": "21",
+      "unit": "percentage_points",
       "verification_detail": {
-        "expected_output_file": "outputs/tables/model_metrics.csv",
-        "metric_to_check": "r2",
-        "random_seed": 42,
-        "test_split": 0.2
+        "filter": {
+          "District": "Kodagu"
+        },
+        "column": "severity_gap"
       }
     },
     {
       "claim_id": "claim-3",
-      "description": "REPLACE. A qualitative or policy claim that cannot be reduced to one number. Example: 'Block-level mentoring reduced learning gaps in comparable districts, per NGO reports'",
+      "description": "District-specific competency-based interventions are recommended because districts exhibit different weakest competencies and varying levels of competency imbalance.",
       "verification_method": "jury_review",
       "verification_detail": {
-        "reasoning": "REPLACE. Why this needs jury judgement rather than a programmatic or reproducible check",
-        "external_dataset": "data/external/REPLACE_IF_ANY.csv"
+        "reasoning": "This recommendation is based on the combined interpretation of competency accuracy, Severity Gap analysis, and female literacy. It is a policy recommendation that requires expert evaluation rather than verification through a single numerical metric.",
+        "external_dataset": ""
       }
     }
   ]
