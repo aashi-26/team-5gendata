@@ -1,14 +1,14 @@
-# Team Name: Replace_Your_Team_Name
+# Team Name: 5Gen data
 
-Replace this README with a short description of your team and solution.
+
 
 ## Team
 
-- Team name:
-- Members:
-- Track(s) addressed: Data Insights & Visualization / Predictive Analytics / Policy & Intervention Design
-- Contact email:
-- Language used: Python / R
+- Team name: 5Gen data
+- Members: Pallavi V, Lakshmi B, Aashiga G.N
+- Track(s) addressed: Data Insights & Visualization and Policy & Intervention Design
+- Contact email: reddypallaviv@gmail.com
+- Language used: Python 
 
 ## AI and LLM use is restricted
 
